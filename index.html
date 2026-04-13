@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Intestino Sano | El Protocolo Definitivo - Dinámico V4</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verde-principal': '#2d5a27',
+                        'verde-oscuro': '#1a3a17',
+                        'verde-claro': '#27ae60',
+                        'naranja-acento': '#e67e22',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'playfair': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #ffffff; color: #1a3a17; }
+        
+        /* --- ESTILOS DE LA IMAGEN DE FONDO QUE SE DESVANECE --- */
+        .hero-bg-image {
+            background-image: url('image_0.png'); /* REFERENCIA A LA IMAGEN SUBIDA */
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.15; /* DESVANECIMIENTO INICIAL */
+            z-index: 0;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0)); /* DESVANECIMIENTO INFERIOR */
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+        }
+
+        /* --- NUEVAS ANIMACIONES AVANZADAS --- */
+
+        /* 1. Animación de Caída con Rebote (bounce-in) para el Título Principal */
+        @keyframes bounceInDown {
+            0% { opacity: 0; transform: translateY(-500px); }
+            60% { opacity: 1; transform: translateY(30px); }
+            80% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .animate-bounceInDown { animation: bounceInDown 1.2s ease-out; }
+
+        /* 2. Animación de Aparición Suave desde Abajo (fade-in-up) para el Subtítulo */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out 0.8s both; }
+
+        /* 3. Efecto de Pulso de Rebote Rítmico (pulse-bounce) para Botones de Compra */
+        @keyframes pulseBounce {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px -5px rgba(39, 174, 96, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 40px -5px rgba(39, 174, 96, 0.7); }
+        }
+        .btn-pulseBounce { animation: pulseBounce 2s infinite ease-in-out; }
+
+        /* 4. Efecto de Brillo/Destello (Shimmer) */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer-effect {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        /* 5. Efecto de Flotación Suave (float) para el Cartel de Oferta */
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+        .animate-float { animation: float 3s infinite ease-in-out; }
+
+        /* 6. Efecto de Desvanecimiento sutil para las tarjetas al hacer hover */
+        .card-fade:hover {
+            opacity: 0.8;
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 7. EFECTO DE CINTA TRANSPORTADORA PARA LAS RESEÑAS */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: flex;
+            animation: marquee 30s linear infinite; /* AJUSTA LA VELOCIDAD AQUÍ */
+            min-width: 200%; /* DUPLICA EL ANCHO PARA UN CICLO CONTINUO */
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused; /* DETIENE LA ANIMACIÓN AL HACER HOVER */
+        }
+        .marquee-card {
+            flex: 0 0 300px; /* ANCHO FIJO PARA CADA TARJETA */
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body class="text-gray-900 overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative z-10">
+            <span class="text-2xl font-extrabold text-verde-principal tracking-tighter">Bienestar<span class="text-verde-claro">Interior</span></span>
+            <a href="#comprar" class="bg-verde-claro text-white text-sm font-bold px-7 py-2.5 rounded-full hover:bg-verde-principal transition-all shadow-sm hover:shadow-lg">Quiero comenzar mi cambio</a>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-32 px-6 text-center relative overflow-hidden bg-white">
+        <div class="hero-bg-image"></div> <div class="max-w-5xl mx-auto relative z-10">
+            <div class="inline-block relative">
+                <span class="bg-verde-principal/10 backdrop-blur-sm text-verde-oscuro text-xs font-bold px-5 py-2 rounded-full uppercase tracking-widest border border-verde-principal/20">Protocolo de Salud Digestiva</span>
+                <div class="absolute inset-0 shimmer-effect rounded-full opacity-30"></div>
+            </div>
+            <h1 class="font-playfair text-5xl md:text-7xl font-black mt-10 leading-tight tracking-tighter animate-bounceInDown text-verde-oscuro">¿Harto de sentirte inflamado después de comer?</h1>
+            <p class="mt-8 text-xl text-verde-principal max-w-2xl mx-auto font-light leading-relaxed animate-fadeInUp">Recuperá tu energía, ligereza y bienestar digestivo con el método natural probado para sanar tu intestino desde la raíz. Sin dietas extremas, solo ciencia aplicada.</p>
+            <div class="mt-14 animate-fadeInUp" style="animation-delay: 1s;">
+                <a href="#comprar" class="bg-naranja-acento text-white font-bold text-lg py-4.5 px-12 rounded-full shadow-lg hover:scale-105 transition-transform inline-block hover:shadow-2xl btn-pulseBounce">¡QUIERO SANAR MI INTESTINO! 👇</a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] text-white fill-current">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C49.1,10.61,100.32,23.33,151.39,31.22,212.6,40.67,282.68,48.16,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 relative z-10 bg-white">
+        
+        <section id="detalles" class="py-24 grid md:grid-cols-3 gap-12" data-aos="fade-up">
+            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 card-fade transition-all">
+                <div class="text-4xl mb-7">🌿</div>
+                <h3 class="font-playfair text-2xl font-bold mb-5 tracking-tight text-verde-principal">Pilar 1: Nutrición Reparadora</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Identificá y eliminá los alimentos "saludables" que te están inflamando. Incluye un Recetario completo de 21 días con platos deliciosos que nutren tu microbiota amigablemente.</p>
+            </div>
+            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 card-fade transition-all">
+                <div class="text-4xl mb-7">💊</div>
+                <h3 class="font-playfair text-2xl font-bold mb-5 tracking-tight text-verde-principal">Pilar 2: Suplementación Crítica</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Lo que realmente funciona (y lo que no) para sellar la permeabilidad intestinal. Te guiaremos en el uso de probióticos, glutamina y otros aliados naturales.</p>
+            </div>
+            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 card-fade transition-all">
+                <div class="text-4xl mb-7">🧠</div>
+                <h3 class="font-playfair text-2xl font-bold mb-5 tracking-tight text-verde-principal">Pilar 3: Eje Intestino-Cerebro</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Conectá con tu cuerpo. Aprenderás técnicas para gestionar el estrés y la ansiedad, factores clave que desequilibran tu salud digestiva sin que te des cuenta.</p>
+            </div>
+        </section>
+
+        <section class="py-24 bg-gray-50 rounded-3xl shadow-inner border border-gray-100 px-10 md:px-20 my-10 overflow-hidden" data-aos="zoom-in">
+            <h2 class="font-playfair text-4xl md:text-5xl font-black text-center mb-16 tracking-tighter text-verde-oscuro">Tu Hoja de Ruta hacia una Nueva Vida</h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="flex items-start transition-transform duration-300 hover:scale-105">
+                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
+                    <div>
+                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Protocolo Fase de Eliminación Estricta:</h4>
+                        <p class="text-gray-600 font-light text-sm">Eliminá los alimentos gatillo y disruptores digestivos en la primera semana crítica.</p>
+                    </div>
+                </div>
+                <div class="flex items-start transition-transform duration-300 hover:scale-105">
+                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
+                    <div>
+                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Recetario de Reparación Intestinal:</h4>
+                        <p class="text-gray-600 font-light text-sm">+50 platos rápidos, fáciles y amigables con tu microbiota.</p>
+                    </div>
+                </div>
+                <div class="flex items-start transition-transform duration-300 hover:scale-105">
+                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
+                    <div>
+                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Guía de Suplementación Inteligente:</h4>
+                        <p class="text-gray-600 font-light text-sm">Descubrí qué cepas probióticas y compuestos naturales sellan el intestino.</p>
+                    </div>
+                </div>
+                <div class="flex items-start transition-transform duration-300 hover:scale-105">
+                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
+                    <div>
+                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Acceso de Por Vida (PDF):</h4>
+                        <p class="text-gray-600 font-light text-sm">Descarga inmediata a tu celular o tablet para consultar cuando quieras.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="py-24 bg-white overflow-hidden" data-aos="fade-up">
+            <h2 class="font-playfair text-4xl md:text-5xl font-black text-center mb-16 tracking-tighter text-verde-oscuro relative z-10">Ellos ya recuperaron su Bienestar Interior</h2>
+            <div class="relative w-full">
+                <div class="animate-marquee relative z-10">
+                    
+                    <div class="flex">
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Llevaba años hinchada y con dolor. La diferencia fue increíble."</p>
+                            <p class="font-semibold text-verde-principal">- Laura P., 34 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Sufria de reflujo constante. El recetario es clave, rico y no me inflama nada."</p>
+                            <p class="font-semibold text-verde-principal">- Carlos R., 42 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Ya no tengo pesadez mental ni fatiga. ¡Lo recomiendo a todos!"</p>
+                            <p class="font-semibold text-verde-principal">- María J., 29 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Creía que comer saludable era comer ensaladas todo el día. Mi panza está plana."</p>
+                            <p class="font-semibold text-verde-principal">- Sofía L., 37 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"El capítulo del eje intestino-cerebro me ayudó a entender el estrés."</p>
+                            <p class="font-semibold text-verde-principal">- Diego M., 45 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"No lo dudé y lo compré. En 3 días noté el cambio."</p>
+                            <p class="font-semibold text-verde-principal">- Ana G., 31 años</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex" aria-hidden="true">
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Llevaba años hinchada y con dolor. La diferencia fue increíble."</p>
+                            <p class="font-semibold text-verde-principal">- Laura P., 34 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Sufria de reflujo constante. El recetario es clave, rico y no me inflama nada."</p>
+                            <p class="font-semibold text-verde-principal">- Carlos R., 42 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Ya no tengo pesadez mental ni fatiga. ¡Lo recomiendo a todos!"</p>
+                            <p class="font-semibold text-verde-principal">- María J., 29 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Creía que comer saludable era comer ensaladas todo el día. Mi panza está plana."</p>
+                            <p class="font-semibold text-verde-principal">- Sofía L., 37 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"El capítulo del eje intestino-cerebro me ayudó a entender el estrés."</p>
+                            <p class="font-semibold text-verde-principal">- Diego M., 45 años</p>
+                        </div>
+                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 card-glow transition-all">
+                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
+                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"No lo dudé y lo compré. En 3 días noté el cambio."</p>
+                            <p class="font-semibold text-verde-principal">- Ana G., 31 años</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20"></div>
+                <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20"></div>
+            </div>
+        </section>
+
+        <section id="comprar" class="py-24 text-center flex justify-center bg-white" data-aos="zoom-in-up">
+            <div class="bg-white rounded-3xl shadow-2xl p-10 md:p-16 border-4 border-verde-claro relative card-fade transition-all duration-300 hover:scale-105 max-w-2xl overflow-hidden">
+                <div class="absolute -top-7 left-1/2 relative inline-block animate-float">
+                    <span class="bg-naranja-acento text-white text-sm font-bold px-10 py-2.5 rounded-full uppercase tracking-widest shadow-xl block z-10 relative">OFERTA LANZAMIENTO - 50% OFF</span>
+                    <div class="absolute inset-0 shimmer-effect rounded-full opacity-60"></div>
+                </div>
+                
+                <h2 class="font-playfair text-4xl font-black mt-10 mb-5 tracking-tighter text-verde-oscuro">Empezá a Sanar Tu Intestino Hoy</h2>
+                <p class="text-gray-500 font-light mb-12 max-w-md mx-auto leading-relaxed">No dejes para mañana el bienestar que podés sentir hoy. Descarga inmediata.</p>
+                
+                <div class="bg-gray-50 rounded-2xl py-12 mb-12 border border-dashed border-gray-300 shadow-inner">
+                    <p class="text-gray-400 line-through text-2xl mb-2 font-light">Precio regular: $30.000 ARS</p>
+                    <p class="text-6xl md:text-7xl font-black text-verde-principal tracking-tighter">$14.900 <span class="text-2xl font-bold">ARS</span></p>
+                    <p class="text-sm text-verde-claro mt-4 font-semibold italic">*Últimas 24 horas a este precio promocional</p>
+                </div>
+
+                <div class="relative inline-block w-full md:w-auto">
+                    <a href="https://mpago.la/2Qhivw2" class="btn-pulseBounce block bg-verde-claro hover:bg-verde-principal text-white font-extrabold text-2xl py-6 px-16 rounded-2xl shadow-xl transition-all relative z-10 overflow-hidden">
+                        ¡QUIERO MI CAMBIO AHORA! 🚀
+                        <div class="absolute inset-0 shimmer-effect opacity-40"></div>
+                    </a>
+                </div>
+                
+                <div class="mt-10 flex items-center justify-center space-x-6 opacity-70">
+                    <img src="https://logotiposenvector.com/wp-content/uploads/2021/11/mercadopago-logo-vector.png" alt="Mercado Pago" class="h-8">
+                    <span class="text-sm font-semibold text-gray-600">PAGO 100% SEGURO Y CIFRADO</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14 bg-gray-50 rounded-2xl text-center px-10 border border-gray-200 mb-24 max-w-3xl mx-auto shadow-sm transition-transform duration-300 hover:scale-105" data-aos="fade-up">
+            <div class="text-5xl mb-7">🛡️</div>
+            <h3 class="text-2xl font-bold mb-4 text-verde-oscuro">Garantía de Satisfacción Total</h3>
+            <p class="text-gray-600 font-light max-w-xl mx-auto leading-relaxed">Probá el protocolo por 7 días. Si no sentís un cambio notable en tu bienestar digestivo, te devolvemos el dinero sin preguntas. Es un compromiso honesto con tu salud.</p>
+        </section>
+
+    </main>
+
+    <footer class="py-20 text-center text-gray-400 text-xs border-t border-gray-100 bg-white relative z-10">
+        <p class="font-semibold text-verde-principal mb-3 text-sm">Bienestar Interior &copy; 2026</p>
+        <p>Tu Intestino Sano - Protocolo de Reparación Microbiana.</p>
+        <p class="mt-5 px-10 max-w-xl mx-auto italic leading-relaxed">Aviso Legal: Este producto digital es una guía informativa y no reemplaza la consulta con un profesional de la salud. Los resultados pueden variar.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900, // Duración de la animación
+            once: true,    // Animar solo la primera vez
+            offset: 120    // Desplazamiento
+        });
+    </script>
+</body>
+</html>
