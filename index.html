@@ -1,499 +1,511 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Intestino Sano | El Protocolo Definitivo</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'verde-principal': '#2d5a27',
-                        'verde-oscuro': '#1a3a17',
-                        'verde-claro': '#27ae60',
-                        'naranja-acento': '#e67e22',
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'playfair': ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #ffffff; color: #1a3a17; }
-        
-        .hero-bg-image {
-            background-image: url('image_0.png');
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.15;
-            z-index: 0;
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intestino Sano en 21 Días — Método Natural</title>
+<meta name="description" content="El método natural que ya usaron más de 800 personas para eliminar la inflamación, los gases y el malestar digestivo para siempre.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #faf7f2;
+  --cream2: #f3ede3;
+  --brown: #2c1f14;
+  --brown2: #4a3728;
+  --green: #3d6b4f;
+  --green2: #2d5240;
+  --green-light: #eef4f0;
+  --green-soft: rgba(61,107,79,0.1);
+  --gold: #b8860b;
+  --orange: #c4622d;
+  --text: #2c1f14;
+  --dim: #7a6a5a;
+  --border: rgba(44,31,20,0.1);
+  --white: #ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
 
-        @keyframes bounceInDown {
-            0% { opacity: 0; transform: translateY(-500px); }
-            60% { opacity: 1; transform: translateY(30px); }
-            80% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        .animate-bounceInDown { animation: bounceInDown 1.2s ease-out; }
+.urgency-bar{background:var(--orange);padding:11px 20px;text-align:center;font-size:0.8rem;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+.timer-badge{background:rgba(0,0,0,0.2);padding:3px 12px;border-radius:100px;font-weight:700;font-size:0.88rem;}
 
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(50px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeInUp { animation: fadeInUp 1s ease-out 0.8s both; }
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(44,31,20,0.06);}
+.nav-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--green);}
+.nav-cta{background:var(--green);color:#fff;font-weight:600;font-size:0.8rem;padding:11px 24px;border-radius:100px;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(61,107,79,0.25);}
+.nav-cta:hover{background:var(--green2);transform:translateY(-1px);}
 
-        @keyframes pulseBounce {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px -5px rgba(39, 174, 96, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 15px 40px -5px rgba(39, 174, 96, 0.7); }
-        }
-        .btn-pulseBounce { animation: pulseBounce 2s infinite ease-in-out; }
+.hero{background:linear-gradient(160deg,#f0ece3 0%,#faf7f2 50%,#eef4f0 100%);padding:80px 48px 72px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(61,107,79,0.07) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.hero-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 
-        @keyframes pulseBounceNaranja {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px -5px rgba(230, 126, 34, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 15px 40px -5px rgba(230, 126, 34, 0.8); }
-        }
-        .btn-pulseBounceNaranja { animation: pulseBounceNaranja 2s infinite ease-in-out; }
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--green-soft);border:1px solid rgba(61,107,79,0.2);border-radius:100px;padding:6px 16px;font-size:0.72rem;font-weight:600;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px;}
+.dot-live{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-        .shimmer-effect {
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-            background-size: 200% 100%;
-            animation: shimmer 3s infinite;
-        }
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,4.5vw,54px);font-weight:700;line-height:1.12;color:var(--brown);margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--green);}
+.hero-sub{font-size:1rem;font-weight:300;color:var(--dim);line-height:1.8;margin-bottom:30px;}
+.hero-sub strong{color:var(--brown);font-weight:500;}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        .animate-float { animation: float 3s infinite ease-in-out; }
+.social-proof{display:flex;align-items:center;gap:14px;margin-bottom:32px;flex-wrap:wrap;}
+.avatars{display:flex;}
+.av{width:34px;height:34px;border-radius:50%;border:2px solid var(--white);margin-left:-8px;font-size:1.1rem;display:flex;align-items:center;justify-content:center;background:var(--cream2);}
+.av:first-child{margin-left:0;}
+.sp-text{font-size:0.8rem;color:var(--dim);}
+.sp-text strong{color:var(--brown);}
+.stars{color:#e8a020;font-size:0.8rem;}
 
-        .card-fade:hover {
-            opacity: 0.9;
-            transform: translateY(-5px);
-            transition: all 0.3s ease-in-out;
-        }
+.cta-box{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(44,31,20,0.08);position:relative;overflow:hidden;}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),#6aab80);}
+.price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+.price-old{font-size:1rem;color:var(--dim);text-decoration:line-through;}
+.price-new{font-family:'DM Sans',sans-serif;font-size:2.6rem;font-weight:700;color:var(--brown);}
+.price-off{background:var(--orange);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;}
+.price-sub{font-size:0.78rem;color:var(--dim);margin-bottom:18px;}
+.price-sub span{color:var(--green);font-weight:600;}
+.btn-main{display:block;width:100%;background:var(--green);color:#fff;font-weight:700;font-size:0.92rem;padding:17px 24px;border-radius:12px;text-align:center;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;box-shadow:0 6px 20px rgba(61,107,79,0.3);}
+.btn-main:hover{background:var(--green2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(61,107,79,0.4);}
+.btn-micro{font-size:0.7rem;color:var(--dim);text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;}
 
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-            display: flex;
-            animation: marquee 30s linear infinite;
-            min-width: 200%;
-        }
-        .animate-marquee:hover { animation-play-state: paused; }
-        .marquee-card { flex: 0 0 300px; margin-right: 20px; }
+.book-card{background:var(--white);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 20px 60px rgba(44,31,20,0.12),0 4px 16px rgba(44,31,20,0.06);position:relative;max-width:260px;margin:0 auto;}
+.book-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),#6aab80);border-radius:20px 20px 0 0;}
+.book-emoji{font-size:4.5rem;display:block;margin-bottom:16px;}
+.book-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--brown);margin-bottom:6px;line-height:1.3;}
+.book-sub{font-size:0.72rem;color:var(--dim);margin-bottom:18px;}
+.book-badge{display:inline-flex;align-items:center;gap:5px;background:var(--green-soft);border:1px solid rgba(61,107,79,0.2);border-radius:100px;padding:4px 12px;font-size:0.68rem;color:var(--green);font-weight:600;margin-bottom:8px;}
+.book-included{font-size:0.7rem;color:var(--dim);line-height:1.6;}
 
-        /* BARRA DE URGENCIA SUPERIOR */
-        @keyframes urgenciaFlash {
-            0%, 100% { background-color: #e67e22; }
-            50% { background-color: #c0392b; }
-        }
-        .barra-urgencia { animation: urgenciaFlash 3s infinite ease-in-out; }
+.divider{height:1px;background:var(--border);max-width:960px;margin:0 auto;}
+.section{padding:80px 48px;max-width:960px;margin:0 auto;}
+.s-eye{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.s-eye::before{content:'';width:22px;height:1px;background:var(--green);}
+.s-h{font-family:'Fraunces',serif;font-size:clamp(24px,3.5vw,44px);font-weight:700;color:var(--brown);line-height:1.15;margin-bottom:44px;}
+.s-h em{font-style:italic;color:var(--green);}
 
-        /* CONTADOR */
-        .contador-box {
-            background: rgba(255,255,255,0.15);
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 12px;
-            padding: 8px 16px;
-            text-align: center;
-            min-width: 60px;
-        }
+.pain-bg{background:var(--cream2);}
+.pain-section{padding:80px 48px;max-width:960px;margin:0 auto;}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.pain-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow 0.2s;}
+.pain-card:hover{box-shadow:0 6px 20px rgba(44,31,20,0.08);}
+.pain-icon{font-size:1.5rem;flex-shrink:0;}
+.pain-t{font-size:0.88rem;color:var(--dim);line-height:1.65;}
+.pain-t strong{color:var(--brown);font-weight:600;display:block;margin-bottom:2px;}
 
-        /* PRECIO HERO */
-        .precio-hero {
-            background: linear-gradient(135deg, #1a3a17, #2d5a27);
-            border-radius: 20px;
-            padding: 16px 32px;
-            display: inline-block;
-        }
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.content-list{display:flex;flex-direction:column;gap:12px;}
+.content-item{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:12px;transition:border-color 0.2s;}
+.content-item:hover{border-color:rgba(61,107,79,0.25);}
+.c-num{width:28px;height:28px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0;}
+.c-text{font-size:0.88rem;color:var(--dim);line-height:1.65;}
+.c-text strong{color:var(--brown);font-weight:600;display:block;margin-bottom:2px;}
 
-        /* STICKY CTA MOBILE */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 12px 20px;
-            background: white;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-        }
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px;}
+.stat-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:26px 18px;text-align:center;}
+.stat-num{font-family:'DM Sans',sans-serif;font-size:2.4rem;font-weight:700;color:var(--green);margin-bottom:6px;line-height:1;}
+.stat-label{font-size:0.78rem;color:var(--dim);line-height:1.5;}
 
-        @keyframes pulseNaranja {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        .pulse-dot { animation: pulseNaranja 1.5s infinite; }
-    </style>
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px;transition:box-shadow 0.2s;}
+.testi-card:hover{box-shadow:0 8px 24px rgba(44,31,20,0.08);}
+.testi-stars{color:#e8a020;margin-bottom:8px;font-size:0.85rem;}
+.testi-q{font-size:2.2rem;color:var(--green);font-family:'Fraunces',serif;line-height:0.8;margin-bottom:8px;opacity:0.3;}
+.testi-text{font-size:0.87rem;color:var(--dim);line-height:1.72;margin-bottom:14px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--border);}
+.testi-av{width:36px;height:36px;background:var(--green-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.testi-name{font-size:0.82rem;font-weight:600;color:var(--brown);}
+.testi-loc{font-size:0.7rem;color:var(--dim);}
+
+.guarantee-bg{background:var(--green-light);}
+.guarantee-section{padding:80px 48px;max-width:960px;margin:0 auto;}
+.guarantee-box{background:var(--white);border:1px solid rgba(61,107,79,0.2);border-radius:24px;padding:48px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;box-shadow:0 8px 30px rgba(61,107,79,0.08);}
+.guarantee-icon{font-size:4rem;}
+.guarantee-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:var(--brown);margin-bottom:10px;}
+.guarantee-text{font-size:0.9rem;color:var(--dim);line-height:1.8;}
+.guarantee-text strong{color:var(--green);}
+
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{font-size:0.92rem;font-weight:600;color:var(--brown);padding:20px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px;transition:color 0.2s;}
+.faq-q:hover{color:var(--green);}
+.faq-icon{color:var(--green);font-size:1.3rem;flex-shrink:0;transition:transform 0.25s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{font-size:0.87rem;color:var(--dim);line-height:1.75;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.35s ease;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:18px;}
+
+.final-section{padding:100px 48px;text-align:center;background:linear-gradient(160deg,var(--cream) 0%,var(--green-light) 100%);}
+.final-h{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,50px);font-weight:700;color:var(--brown);margin-bottom:14px;line-height:1.15;}
+.final-h em{font-style:italic;color:var(--green);}
+.final-sub{font-size:0.98rem;color:var(--dim);margin-bottom:40px;line-height:1.75;max-width:500px;margin-left:auto;margin-right:auto;}
+.final-box{max-width:400px;margin:0 auto;}
+
+footer{background:var(--brown);padding:28px 48px;text-align:center;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.4);}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
+
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;padding:14px 20px 20px;background:var(--white);border-top:1px solid var(--border);z-index:200;box-shadow:0 -4px 20px rgba(44,31,20,0.1);}
+
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .hero{padding:52px 20px 48px;}
+  .hero-inner{grid-template-columns:1fr;gap:36px;}
+  .hero-visual{order:-1;}
+  .pain-grid,.testi-grid,.content-grid{grid-template-columns:1fr;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .guarantee-box{grid-template-columns:1fr;text-align:center;padding:28px 20px;}
+  .section,.pain-section,.guarantee-section{padding:60px 20px;}
+  .final-section{padding:60px 20px;}
+  footer{padding:24px 20px;}
+  .sticky-cta{display:block;}
+  body{padding-bottom:80px;}
+}
+
+/* EFECTOS LATIDO Y DESTELLO */
+.price-off{animation:badgePulse 2s ease-in-out infinite;}
+@keyframes badgePulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(196,98,45,0.5);}
+  50%{transform:scale(1.08);box-shadow:0 0 0 8px rgba(196,98,45,0);}
+}
+.btn-main{animation:btnGlow 2.2s ease-in-out infinite;}
+@keyframes btnGlow{
+  0%,100%{box-shadow:0 6px 20px rgba(61,107,79,0.3);}
+  50%{box-shadow:0 8px 32px rgba(61,107,79,0.7),0 0 0 7px rgba(61,107,79,0.1);}
+}
+.btn-main:hover{animation:none;transform:translateY(-2px);box-shadow:0 10px 28px rgba(61,107,79,0.5);}
+.price-new{animation:priceHeat 3s ease-in-out infinite;}
+@keyframes priceHeat{
+  0%,100%{color:var(--brown);}
+  50%{color:#1a4a2e;}
+}
+.btn-micro .mi-1{animation:iconPop 2s ease-in-out infinite;}
+.btn-micro .mi-2{animation:iconPop 2s ease-in-out infinite;animation-delay:0.4s;}
+.btn-micro .mi-3{animation:iconPop 2s ease-in-out infinite;animation-delay:0.8s;}
+@keyframes iconPop{
+  0%,100%{transform:scale(1);}
+  40%{transform:scale(1.35);}
+  60%{transform:scale(1.2);}
+}
+.timer-badge{animation:timerPulse 1s ease-in-out infinite;}
+@keyframes timerPulse{
+  0%,100%{background:rgba(0,0,0,0.2);}
+  50%{background:rgba(0,0,0,0.4);}
+}
+
+/* FONDO ORGÁNICO CON TEXTURA */
+body::after {
+  content:'';position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(61,107,79,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 80%, rgba(184,134,11,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(61,107,79,0.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+/* Ruido orgánico */
+body::before {
+  content:'';position:fixed;inset:0;z-index:-1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity:1;pointer-events:none;
+}
+/* Hojas flotantes */
+.leaf { position:fixed; pointer-events:none; z-index:0; font-size:1.4rem; opacity:0; animation:floatLeaf linear infinite; }
+@keyframes floatLeaf {
+  0%   { transform:translateY(110vh) rotate(0deg)   translateX(0);     opacity:0; }
+  5%   { opacity:0.35; }
+  95%  { opacity:0.2; }
+  100% { transform:translateY(-10vh) rotate(720deg) translateX(60px);  opacity:0; }
+}
+
+/* ENTRADA HERO DRAMÁTICA */
+.hero-eyebrow { animation: slideDown 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+.hero h1      { animation: slideUp  0.9s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+.hero-sub     { animation: slideUp  0.8s cubic-bezier(0.22,1,0.36,1) 0.3s  both; }
+.social-proof { animation: slideUp  0.7s cubic-bezier(0.22,1,0.36,1) 0.45s both; }
+.cta-box      { animation: slideUp  0.8s cubic-bezier(0.22,1,0.36,1) 0.55s both; }
+.book-card    { animation: scaleIn  1s   cubic-bezier(0.22,1,0.36,1) 0.3s  both; }
+@keyframes slideDown { from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp   { from{opacity:0;transform:translateY(40px)}  to{opacity:1;transform:translateY(0)} }
+@keyframes scaleIn   { from{opacity:0;transform:scale(0.88) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+
+/* NAV CTA — latido continuo */
+.nav-cta {
+  animation: navPulse 2s ease-in-out infinite !important;
+  position: relative;
+}
+.nav-cta::after {
+  content:'';position:absolute;inset:0;border-radius:100px;
+  animation:navRing 2s ease-out infinite;
+  border:2px solid rgba(61,107,79,0.6);
+}
+@keyframes navPulse {
+  0%,100%{ box-shadow:0 4px 14px rgba(61,107,79,0.25); transform:scale(1); }
+  50%    { box-shadow:0 6px 24px rgba(61,107,79,0.55); transform:scale(1.04); }
+}
+@keyframes navRing {
+  0%  { transform:scale(1);   opacity:0.7; }
+  100%{ transform:scale(1.5); opacity:0;   }
+}
+
+/* TÍTULO HERO — shimmer en la palabra em */
+.hero h1 em {
+  background: linear-gradient(90deg, var(--green) 0%, #6aab80 40%, var(--green2) 60%, var(--green) 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shimmerText 3s linear infinite;
+}
+@keyframes shimmerText { to{ background-position:200% center; } }
+
+/* BADGES trust más llamativos */
+.btn-micro { gap:10px; }
+.mi-1,.mi-2,.mi-3 {
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(61,107,79,0.1);border:1px solid rgba(61,107,79,0.2);
+  border-radius:100px;padding:3px 10px;font-size:0.68rem;font-weight:600;color:var(--green);
+}
+@keyframes iconPop { 0%,100%{transform:scale(1)} 40%{transform:scale(1.35)} 60%{transform:scale(1.2)} }
+
+/* SECTION TITLES — entrada desde izquierda */
+.s-h { overflow:hidden; }
+
+/* PAIN CARDS — hover más dramático */
+.pain-card { transition:all 0.25s; }
+.pain-card:hover { transform:translateY(-4px) scale(1.01); box-shadow:0 12px 28px rgba(44,31,20,0.1); border-color:rgba(61,107,79,0.2); }
+.pain-icon { transition:transform 0.3s; }
+.pain-card:hover .pain-icon { transform:scale(1.3) rotate(-5deg); }
+
+/* TESTI CARDS */
+.testi-card:hover { transform:translateY(-3px); box-shadow:0 12px 28px rgba(44,31,20,0.1); }
+
+/* BOOK CARD float */
+.book-card { animation:scaleIn 1s cubic-bezier(0.22,1,0.36,1) 0.3s both, bookFloat 5s ease-in-out 1.5s infinite !important; }
+@keyframes bookFloat {
+  0%,100%{ transform:translateY(0)   rotate(0deg);   box-shadow:0 20px 60px rgba(44,31,20,0.12); }
+  50%    { transform:translateY(-10px) rotate(1deg); box-shadow:0 30px 70px rgba(44,31,20,0.18); }
+}
+
+/* GUARANTEE BOX pulse borde */
+.guarantee-box { animation:guaranteePulse 3s ease-in-out infinite; }
+@keyframes guaranteePulse {
+  0%,100%{ border-color:rgba(61,107,79,0.2); }
+  50%    { border-color:rgba(61,107,79,0.5); box-shadow:0 8px 30px rgba(61,107,79,0.12); }
+}
+
+/* STATS */
+.stat-num { transition:transform 0.3s; }
+.stat-card:hover .stat-num { transform:scale(1.1); color:var(--green2); }
+
+</style>
 </head>
-<body class="text-gray-900 overflow-x-hidden">
+<body>
 
-    <!-- BARRA DE URGENCIA SUPERIOR -->
-    <div class="barra-urgencia text-white text-center py-3 px-4 text-sm font-bold tracking-wide fixed top-0 left-0 w-full z-[60]">
-        ⏰ OFERTA TERMINA EN: &nbsp;
-        <span id="countdown" class="font-black text-lg">23:59:47</span>
-        &nbsp; — Solo $14.900 ARS 🔥
+
+<!-- HOJAS FLOTANTES -->
+<div class="leaf" style="left:5%;animation-duration:18s;animation-delay:0s;">🌿</div>
+<div class="leaf" style="left:18%;animation-duration:22s;animation-delay:3s;">🍃</div>
+<div class="leaf" style="left:35%;animation-duration:16s;animation-delay:7s;">🌱</div>
+<div class="leaf" style="left:55%;animation-duration:24s;animation-delay:1s;">🌿</div>
+<div class="leaf" style="left:70%;animation-duration:19s;animation-delay:5s;">🍃</div>
+<div class="leaf" style="left:85%;animation-duration:21s;animation-delay:9s;">🌱</div>
+<div class="leaf" style="left:92%;animation-duration:17s;animation-delay:2s;">🌿</div>
+
+<div class="urgency-bar">
+  🌿 OFERTA DE LANZAMIENTO — Termina en: <span class="timer-badge" id="timer">23:47:12</span> &nbsp;·&nbsp; Solo quedan <strong id="spots">19</strong> lugares al precio especial
+</div>
+
+<nav>
+  <div class="nav-brand">🌿 Bienestar Interior</div>
+  <a href="#comprar" class="nav-cta">Quiero el E-Book</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="dot-live"></span>+800 personas ya lo aplicaron</div>
+      <h1>El método natural para sanar tu intestino <em>en 21 días.</em></h1>
+      <p class="hero-sub">Sin medicamentos. Sin dietas extremas. Solo un plan claro, paso a paso, basado en la naturaleza — que <strong>ya transformó la digestión de más de 800 personas</strong> en toda Argentina.</p>
+      <div class="social-proof">
+        <div class="avatars">
+          <div class="av">👩</div><div class="av">👩</div><div class="av">🧑</div><div class="av">👩</div><div class="av">👩</div>
+        </div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="sp-text"><strong>4.9/5</strong> en 247 reseñas verificadas</div>
+        </div>
+      </div>
+      <div class="cta-box" id="comprar">
+        <div class="price-row">
+          <span class="price-old">$30.000</span>
+          <span class="price-new">$14.900</span>
+          <span class="price-off">-50% OFF</span>
+        </div>
+        <p class="price-sub">Pago único · Descarga inmediata · <span>6 cuotas de $2.483</span></p>
+        <a href="https://mpago.la/2Qhivw2" class="btn-main">✅ Quiero sanar mi intestino ahora</a>
+        <p class="btn-micro"><span class="mi-1">🔒 Pago seguro</span> <span class="mi-2">🛡️ Garantía 30 días</span> <span class="mi-3">⚡ Inmediato</span></p>
+      </div>
     </div>
-
-    <nav class="fixed top-10 left-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative z-10">
-            <span class="text-2xl font-extrabold text-verde-principal tracking-tighter">Bienestar<span class="text-verde-claro">Interior</span></span>
-            <a href="#comprar" class="bg-naranja-acento text-white text-sm font-bold px-7 py-2.5 rounded-full hover:bg-orange-700 transition-all shadow-sm hover:shadow-lg btn-pulseBounceNaranja">
-                🛒 Comprá por $14.900
-            </a>
-        </div>
-    </nav>
-
-    <header class="pt-52 pb-32 px-6 text-center relative overflow-hidden bg-white">
-        <div class="hero-bg-image"></div>
-        <div class="max-w-5xl mx-auto relative z-10">
-            <div class="inline-block relative mb-6">
-                <span class="bg-verde-principal/10 backdrop-blur-sm text-verde-oscuro text-xs font-bold px-5 py-2 rounded-full uppercase tracking-widest border border-verde-principal/20">Protocolo de Salud Digestiva</span>
-            </div>
-            <h1 class="font-playfair text-5xl md:text-7xl font-black mt-6 leading-tight tracking-tighter animate-bounceInDown text-verde-oscuro">¿Harto de sentirte inflamado después de comer?</h1>
-            <p class="mt-8 text-xl text-verde-principal max-w-2xl mx-auto font-light leading-relaxed animate-fadeInUp">Recuperá tu energía, ligereza y bienestar digestivo con el protocolo antiinflamatorio natural. Sin dietas extremas, resultados reales en 21 días.</p>
-            
-            <!-- PRECIO VISIBLE EN EL HERO — CAMBIO CRÍTICO -->
-            <div class="mt-10 animate-fadeInUp" style="animation-delay: 0.9s;">
-                <div class="precio-hero mx-auto inline-block mb-6">
-                    <p class="text-white/70 line-through text-lg font-light">Precio regular: $30.000 ARS</p>
-                    <p class="text-white text-5xl font-black tracking-tighter">$14.900 <span class="text-2xl font-bold">ARS</span></p>
-                    <p class="text-green-300 text-sm font-semibold mt-1">✅ Descarga inmediata del PDF</p>
-                </div>
-            </div>
-
-            <div class="mt-4 animate-fadeInUp" style="animation-delay: 1s;">
-                <a href="#comprar" class="bg-naranja-acento text-white font-bold text-xl py-5 px-14 rounded-full shadow-lg hover:scale-105 transition-transform inline-block hover:shadow-2xl btn-pulseBounceNaranja">
-                    ¡QUIERO SANAR MI INTESTINO! 👇
-                </a>
-                <p class="text-sm text-gray-400 mt-4 font-light">🔒 Pago 100% seguro con MercadoPago · 🛡️ Garantía de 7 días</p>
-            </div>
-
-            <!-- PRUEBA SOCIAL RÁPIDA -->
-            <div class="mt-10 flex flex-wrap justify-center gap-6 animate-fadeInUp" style="animation-delay: 1.2s;">
-                <div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-5 py-2">
-                    <span class="text-yellow-400 text-sm">★★★★★</span>
-                    <span class="text-sm text-verde-principal font-semibold">+200 personas ya sanaron su intestino</span>
-                </div>
-                <div class="flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-5 py-2">
-                    <span class="pulse-dot text-red-500">●</span>
-                    <span class="text-sm text-naranja-acento font-semibold">47 personas viendo esto ahora</span>
-                </div>
-            </div>
-        </div>
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] text-white fill-current">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C49.1,10.61,100.32,23.33,151.39,31.22,212.6,40.67,282.68,48.16,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-6 relative z-10 bg-white">
-
-        <!-- PROBLEMA — IDENTIFICACIÓN -->
-        <section class="py-16 text-center max-w-3xl mx-auto" data-aos="fade-up">
-            <h2 class="font-playfair text-3xl md:text-4xl font-black text-verde-oscuro mb-8">¿Te identificás con esto?</h2>
-            <div class="grid md:grid-cols-2 gap-4 text-left">
-                <div class="flex items-center gap-3 bg-red-50 border border-red-100 rounded-2xl p-4">
-                    <span class="text-2xl">😣</span>
-                    <p class="text-gray-700 font-medium">Te hinchas después de CADA comida</p>
-                </div>
-                <div class="flex items-center gap-3 bg-red-50 border border-red-100 rounded-2xl p-4">
-                    <span class="text-2xl">💨</span>
-                    <p class="text-gray-700 font-medium">Gases y ruidos intestinales constantes</p>
-                </div>
-                <div class="flex items-center gap-3 bg-red-50 border border-red-100 rounded-2xl p-4">
-                    <span class="text-2xl">😴</span>
-                    <p class="text-gray-700 font-medium">Fatiga y pesadez mental después de comer</p>
-                </div>
-                <div class="flex items-center gap-3 bg-red-50 border border-red-100 rounded-2xl p-4">
-                    <span class="text-2xl">🚽</span>
-                    <p class="text-gray-700 font-medium">Diarrea y constipación que se alternan</p>
-                </div>
-            </div>
-            <p class="mt-8 text-lg text-verde-principal font-semibold">Si marcaste aunque sea 1 de estas señales, tu intestino necesita ayuda urgente. 💚</p>
-        </section>
-        
-        <section id="detalles" class="py-24 grid md:grid-cols-3 gap-12" data-aos="fade-up">
-            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 card-fade transition-all">
-                <div class="text-4xl mb-7">🌿</div>
-                <h3 class="font-playfair text-2xl font-bold mb-5 tracking-tight text-verde-principal">Pilar 1: Nutrición Reparadora</h3>
-                <p class="text-gray-600 font-light leading-relaxed">Identificá y eliminá los alimentos "saludables" que te están inflamando. Incluye un Recetario completo de 21 días con platos deliciosos que nutren tu microbiota.</p>
-            </div>
-            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 card-fade transition-all">
-                <div class="text-4xl mb-7">💊</div>
-                <h3 class="font-playfair text-2xl font-bold mb-5 tracking-tight text-verde-principal">Pilar 2: Suplementación Crítica</h3>
-                <p class="text-gray-600 font-light leading-relaxed">Lo que realmente funciona para sellar la permeabilidad intestinal. Probióticos, glutamina y aliados naturales que sí dan resultados.</p>
-            </div>
-            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 card-fade transition-all">
-                <div class="text-4xl mb-7">🧠</div>
-                <h3 class="font-playfair text-2xl font-bold mb-5 tracking-tight text-verde-principal">Pilar 3: Eje Intestino-Cerebro</h3>
-                <p class="text-gray-600 font-light leading-relaxed">El estrés destruye tu microbiota sin que lo notes. Aprenderás técnicas concretas para cortar ese ciclo y recuperar tu bienestar.</p>
-            </div>
-        </section>
-
-        <section class="py-24 bg-gray-50 rounded-3xl shadow-inner border border-gray-100 px-10 md:px-20 my-10 overflow-hidden" data-aos="zoom-in">
-            <h2 class="font-playfair text-4xl md:text-5xl font-black text-center mb-16 tracking-tighter text-verde-oscuro">Tu Hoja de Ruta hacia una Nueva Vida</h2>
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div class="flex items-start transition-transform duration-300 hover:scale-105">
-                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
-                    <div>
-                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Protocolo Fase de Eliminación Estricta:</h4>
-                        <p class="text-gray-600 font-light text-sm">Eliminá los alimentos gatillo y disruptores digestivos en la primera semana crítica.</p>
-                    </div>
-                </div>
-                <div class="flex items-start transition-transform duration-300 hover:scale-105">
-                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
-                    <div>
-                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Recetario de Reparación Intestinal:</h4>
-                        <p class="text-gray-600 font-light text-sm">+50 platos rápidos, fáciles y amigables con tu microbiota.</p>
-                    </div>
-                </div>
-                <div class="flex items-start transition-transform duration-300 hover:scale-105">
-                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
-                    <div>
-                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Guía de Suplementación Inteligente:</h4>
-                        <p class="text-gray-600 font-light text-sm">Descubrí qué cepas probióticas y compuestos naturales sellan el intestino.</p>
-                    </div>
-                </div>
-                <div class="flex items-start transition-transform duration-300 hover:scale-105">
-                    <span class="text-3xl text-verde-claro mr-6 mt-1">✔</span>
-                    <div>
-                        <h4 class="font-semibold text-lg text-verde-principal mb-2">Acceso de Por Vida (PDF):</h4>
-                        <p class="text-gray-600 font-light text-sm">Descarga inmediata a tu celular o tablet para consultar cuando quieras.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonios" class="py-24 bg-white overflow-hidden" data-aos="fade-up">
-            <h2 class="font-playfair text-4xl md:text-5xl font-black text-center mb-4 tracking-tighter text-verde-oscuro">Ellos ya recuperaron su Bienestar Interior</h2>
-            <p class="text-center text-gray-500 mb-16 font-light">Resultados reales de personas reales 💚</p>
-            <div class="relative w-full">
-                <div class="animate-marquee relative z-10">
-                    <div class="flex">
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Llevaba años hinchada y con dolor. La diferencia fue increíble."</p>
-                            <p class="font-semibold text-verde-principal">- Laura P., 34 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Sufría de reflujo constante. El recetario es clave, rico y no me inflama nada."</p>
-                            <p class="font-semibold text-verde-principal">- Carlos R., 42 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Ya no tengo pesadez mental ni fatiga. ¡Lo recomiendo a todos!"</p>
-                            <p class="font-semibold text-verde-principal">- María J., 29 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Creía que comer saludable era comer ensaladas todo el día. Mi panza está plana."</p>
-                            <p class="font-semibold text-verde-principal">- Sofía L., 37 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"El capítulo del eje intestino-cerebro me ayudó a entender el estrés."</p>
-                            <p class="font-semibold text-verde-principal">- Diego M., 45 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"No lo dudé y lo compré. En 3 días noté el cambio."</p>
-                            <p class="font-semibold text-verde-principal">- Ana G., 31 años</p>
-                        </div>
-                    </div>
-                    <div class="flex" aria-hidden="true">
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Llevaba años hinchada y con dolor. La diferencia fue increíble."</p>
-                            <p class="font-semibold text-verde-principal">- Laura P., 34 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Sufría de reflujo constante. El recetario es clave, rico y no me inflama nada."</p>
-                            <p class="font-semibold text-verde-principal">- Carlos R., 42 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Ya no tengo pesadez mental ni fatiga. ¡Lo recomiendo a todos!"</p>
-                            <p class="font-semibold text-verde-principal">- María J., 29 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"Creía que comer saludable era comer ensaladas todo el día. Mi panza está plana."</p>
-                            <p class="font-semibold text-verde-principal">- Sofía L., 37 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"El capítulo del eje intestino-cerebro me ayudó a entender el estrés."</p>
-                            <p class="font-semibold text-verde-principal">- Diego M., 45 años</p>
-                        </div>
-                        <div class="marquee-card bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-100 transition-all">
-                            <div class="flex text-yellow-400 text-sm mb-4">★★★★★</div>
-                            <p class="text-gray-700 font-light italic text-sm mb-6 leading-relaxed">"No lo dudé y lo compré. En 3 días noté el cambio."</p>
-                            <p class="font-semibold text-verde-principal">- Ana G., 31 años</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20"></div>
-                <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20"></div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN DE COMPRA MEJORADA -->
-        <section id="comprar" class="py-24 text-center flex justify-center bg-white" data-aos="zoom-in-up">
-            <div class="bg-white rounded-3xl shadow-2xl p-10 md:p-16 border-4 border-verde-claro relative max-w-2xl w-full overflow-hidden">
-                
-                <div class="inline-block animate-float mb-6">
-                    <span class="bg-naranja-acento text-white text-sm font-bold px-10 py-2.5 rounded-full uppercase tracking-widest shadow-xl block relative">
-                        OFERTA LANZAMIENTO - 50% OFF
-                        <div class="absolute inset-0 shimmer-effect rounded-full opacity-60"></div>
-                    </span>
-                </div>
-                
-                <h2 class="font-playfair text-4xl font-black mt-4 mb-5 tracking-tighter text-verde-oscuro">Empezá a Sanar Tu Intestino Hoy</h2>
-                <p class="text-gray-500 font-light mb-8 max-w-md mx-auto leading-relaxed">No dejes para mañana el bienestar que podés sentir hoy. Descarga inmediata del PDF.</p>
-                
-                <!-- CONTADOR REGRESIVO -->
-                <div class="bg-verde-oscuro rounded-2xl py-5 px-6 mb-8 flex items-center justify-center gap-2">
-                    <span class="text-white font-semibold text-sm">⏰ Oferta termina en:</span>
-                    <div class="flex gap-2">
-                        <div class="contador-box">
-                            <p class="text-white font-black text-xl" id="hours">23</p>
-                            <p class="text-green-300 text-xs">hs</p>
-                        </div>
-                        <span class="text-white font-black text-xl">:</span>
-                        <div class="contador-box">
-                            <p class="text-white font-black text-xl" id="minutes">59</p>
-                            <p class="text-green-300 text-xs">min</p>
-                        </div>
-                        <span class="text-white font-black text-xl">:</span>
-                        <div class="contador-box">
-                            <p class="text-white font-black text-xl" id="seconds">47</p>
-                            <p class="text-green-300 text-xs">seg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl py-10 mb-8 border border-dashed border-gray-300 shadow-inner">
-                    <p class="text-gray-400 line-through text-2xl mb-2 font-light">Precio regular: $30.000 ARS</p>
-                    <p class="text-6xl md:text-7xl font-black text-verde-principal tracking-tighter">$14.900 <span class="text-2xl font-bold">ARS</span></p>
-                    <p class="text-sm text-naranja-acento mt-3 font-bold">🔥 Ahorrás $15.100 ARS hoy</p>
-                    <p class="text-sm text-verde-claro mt-1 font-semibold italic">*Precio válido por tiempo limitado</p>
-                </div>
-
-                <div class="relative inline-block w-full md:w-auto mb-6">
-                    <a href="https://mpago.la/2Qhivw2" class="btn-pulseBounce block bg-verde-claro hover:bg-verde-principal text-white font-extrabold text-2xl py-6 px-16 rounded-2xl shadow-xl transition-all relative z-10 overflow-hidden">
-                        ¡QUIERO MI CAMBIO AHORA! 🚀
-                        <div class="absolute inset-0 shimmer-effect opacity-40"></div>
-                    </a>
-                </div>
-
-                <!-- MICRO-GARANTÍAS -->
-                <div class="grid grid-cols-3 gap-3 mb-8 text-center">
-                    <div class="bg-green-50 rounded-xl p-3">
-                        <p class="text-2xl mb-1">🔒</p>
-                        <p class="text-xs text-verde-principal font-semibold">Pago seguro</p>
-                    </div>
-                    <div class="bg-green-50 rounded-xl p-3">
-                        <p class="text-2xl mb-1">⚡</p>
-                        <p class="text-xs text-verde-principal font-semibold">Descarga inmediata</p>
-                    </div>
-                    <div class="bg-green-50 rounded-xl p-3">
-                        <p class="text-2xl mb-1">🛡️</p>
-                        <p class="text-xs text-verde-principal font-semibold">Garantía 7 días</p>
-                    </div>
-                </div>
-                
-                <div class="flex items-center justify-center space-x-4 opacity-70">
-                    <img src="https://logotiposenvector.com/wp-content/uploads/2021/11/mercadopago-logo-vector.png" alt="Mercado Pago" class="h-8">
-                    <span class="text-sm font-semibold text-gray-600">PAGO 100% SEGURO Y CIFRADO</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-14 bg-gray-50 rounded-2xl text-center px-10 border border-gray-200 mb-24 max-w-3xl mx-auto shadow-sm transition-transform duration-300 hover:scale-105" data-aos="fade-up">
-            <div class="text-5xl mb-7">🛡️</div>
-            <h3 class="text-2xl font-bold mb-4 text-verde-oscuro">Garantía de Satisfacción Total</h3>
-            <p class="text-gray-600 font-light max-w-xl mx-auto leading-relaxed">Probá el protocolo por 7 días. Si no sentís un cambio notable en tu bienestar digestivo, te devolvemos el dinero sin preguntas. Es un compromiso honesto con tu salud.</p>
-        </section>
-
-    </main>
-
-    <footer class="py-20 text-center text-gray-400 text-xs border-t border-gray-100 bg-white relative z-10 pb-32 md:pb-20">
-        <p class="font-semibold text-verde-principal mb-3 text-sm">Bienestar Interior &copy; 2026</p>
-        <p>Tu Intestino Sano - Protocolo de Reparación Microbiana.</p>
-        <p class="mt-5 px-10 max-w-xl mx-auto italic leading-relaxed">Aviso Legal: Este producto digital es una guía informativa y no reemplaza la consulta con un profesional de la salud. Los resultados pueden variar.</p>
-    </footer>
-
-    <!-- STICKY CTA MOBILE -->
-    <div class="sticky-cta md:hidden">
-        <a href="https://mpago.la/2Qhivw2" class="block bg-naranja-acento text-white font-extrabold text-lg py-4 px-6 rounded-2xl text-center shadow-xl btn-pulseBounceNaranja">
-            🛒 Comprá ahora — $14.900 ARS
-        </a>
-        <p class="text-center text-xs text-gray-400 mt-1">🔒 Pago seguro · ⚡ Descarga inmediata</p>
+    <div class="hero-visual">
+      <div class="book-card">
+        <span class="book-emoji">📗</span>
+        <div class="book-title">Intestino Sano en 21 Días</div>
+        <div class="book-sub">Método Natural Comprobado</div>
+        <div class="book-badge">✓ E-Book Digital</div>
+        <p class="book-included">Plan de 21 días · Recetas anti-inflamatorias · Guía de ingredientes naturales</p>
+      </div>
     </div>
+  </div>
+</div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 900, once: true, offset: 120 });
+<div class="pain-bg">
+<div class="pain-section fade-up">
+  <div class="s-eye">¿Te suena familiar?</div>
+  <h2 class="s-h">Lo que sentís todos los días<br><em>no es normal</em></h2>
+  <div class="pain-grid">
+    <div class="pain-card"><span class="pain-icon">😮‍💨</span><div class="pain-t"><strong>Inflamación después de comer</strong>La panza se agranda sin importar qué comiste. Desde la mañana hasta la noche.</div></div>
+    <div class="pain-card"><span class="pain-icon">💨</span><div class="pain-t"><strong>Gases constantes e incómodos</strong>En la oficina, en el colectivo, con amigos. Siempre en el peor momento.</div></div>
+    <div class="pain-card"><span class="pain-icon">😴</span><div class="pain-t"><strong>Cansancio inexplicable</strong>Después de comer necesitás dormir. No tenés energía para terminar el día.</div></div>
+    <div class="pain-card"><span class="pain-icon">🔄</span><div class="pain-t"><strong>Digestión impredecible</strong>Estreñimiento, urgencia, malestar. Nunca sabés lo que viene.</div></div>
+    <div class="pain-card"><span class="pain-icon">🧠</span><div class="pain-t"><strong>Niebla mental y mal humor</strong>Dificultad para concentrarte. El intestino afecta todo el cuerpo.</div></div>
+    <div class="pain-card"><span class="pain-icon">💊</span><div class="pain-t"><strong>Ya probaste de todo sin resultado</strong>Pastillas, probióticos, dietas. Ninguna solución fue duradera.</div></div>
+  </div>
+</div>
+</div>
 
-        // CONTADOR REGRESIVO — se reinicia cada 24hs desde localStorage
-        function startCountdown() {
-            const KEY = 'tis_countdown_end';
-            let endTime = localStorage.getItem(KEY);
-            
-            if (!endTime || Date.now() > parseInt(endTime)) {
-                endTime = Date.now() + 24 * 60 * 60 * 1000;
-                localStorage.setItem(KEY, endTime);
-            }
+<div class="divider"></div>
 
-            function update() {
-                const remaining = parseInt(endTime) - Date.now();
-                if (remaining <= 0) {
-                    localStorage.removeItem(KEY);
-                    startCountdown();
-                    return;
-                }
-                const h = Math.floor(remaining / 3600000);
-                const m = Math.floor((remaining % 3600000) / 60000);
-                const s = Math.floor((remaining % 60000) / 1000);
+<div class="section fade-up">
+  <div class="s-eye">Qué vas a aprender</div>
+  <h2 class="s-h">Un método completo que<br><em>realmente funciona</em></h2>
+  <div class="content-grid">
+    <div class="content-list">
+      <div class="content-item"><div class="c-num">1</div><div class="c-text"><strong>La causa real de tu inflamación</strong>Lo que los médicos rara vez explican y por qué los medicamentos solos no alcanzan.</div></div>
+      <div class="content-item"><div class="c-num">2</div><div class="c-text"><strong>Los 5 alimentos que destruyen tu intestino</strong>Probablemente los comés todos los días sin saber el daño que generan.</div></div>
+      <div class="content-item"><div class="c-num">3</div><div class="c-text"><strong>El poder de la cúrcuma y el jengibre</strong>Cómo usarlos correctamente para resultados visibles desde la primera semana.</div></div>
+      <div class="content-item"><div class="c-num">4</div><div class="c-text"><strong>Plan día a día de 21 días</strong>Qué hacer exactamente cada día para resetear tu sistema digestivo.</div></div>
+      <div class="content-item"><div class="c-num">5</div><div class="c-text"><strong>Recetas anti-inflamatorias fáciles</strong>Con ingredientes económicos de cualquier mercado del barrio.</div></div>
+    </div>
+    <div>
+      <div class="cta-box">
+        <div class="price-row">
+          <span class="price-old">$30.000</span>
+          <span class="price-new">$14.900</span>
+          <span class="price-off">-50% OFF</span>
+        </div>
+        <p class="price-sub">Pago único · Descarga inmediata · <span>6 cuotas de $2.483</span></p>
+        <a href="https://mpago.la/2Qhivw2" class="btn-main">✅ Quiero empezar hoy</a>
+        <p class="btn-micro"><span class="mi-1">🔒 Pago seguro</span> <span class="mi-2">🛡️ Garantía 30 días</span></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-                const fmt = n => String(n).padStart(2, '0');
-                
-                document.getElementById('hours').textContent = fmt(h);
-                document.getElementById('minutes').textContent = fmt(m);
-                document.getElementById('seconds').textContent = fmt(s);
-                document.getElementById('countdown').textContent = `${fmt(h)}:${fmt(m)}:${fmt(s)}`;
-            }
+<div class="divider"></div>
 
-            update();
-            setInterval(update, 1000);
-        }
+<div class="section fade-up">
+  <div class="s-eye">Resultados reales</div>
+  <h2 class="s-h">Lo que dicen quienes<br><em>ya lo aplicaron</em></h2>
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">800+</div><div class="stat-label">personas que aplicaron el método en Argentina</div></div>
+    <div class="stat-card"><div class="stat-num">7 días</div><div class="stat-label">promedio para sentir el primer cambio real</div></div>
+    <div class="stat-card"><div class="stat-num">4.9 ★</div><div class="stat-label">calificación promedio en 247 reseñas</div></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-q">"</div><p class="testi-text">En 10 días ya no me inflaba después de almorzar. Algo que venía sufriendo hace 3 años. No puedo creer que sea tan simple y natural.</p><div class="testi-author"><div class="testi-av">👩</div><div><div class="testi-name">Valentina M.</div><div class="testi-loc">Buenos Aires</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-q">"</div><p class="testi-text">Lo leí en un día y empecé al otro. La primera semana perdí 2 kg de pura inflamación. Los gases desaparecieron casi del todo.</p><div class="testi-author"><div class="testi-av">🧑</div><div><div class="testi-name">Matías R.</div><div class="testi-loc">Córdoba</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-q">"</div><p class="testi-text">El plan de 21 días es muy claro y fácil de seguir. Para la tercera semana dormía mejor y tenía energía de verdad por primera vez en años.</p><div class="testi-author"><div class="testi-av">👩</div><div><div class="testi-name">Carolina S.</div><div class="testi-loc">Rosario</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★☆</div><div class="testi-q">"</div><p class="testi-text">Ya probé 4 cosas diferentes sin resultado. Este método es diferente porque explica el porqué de cada cosa. Eso marcó la diferencia.</p><div class="testi-author"><div class="testi-av">👩</div><div><div class="testi-name">Luciana P.</div><div class="testi-loc">Mendoza</div></div></div></div>
+  </div>
+</div>
 
-        startCountdown();
-    </script>
+<div class="guarantee-bg">
+<div class="guarantee-section fade-up">
+  <div class="guarantee-box">
+    <div class="guarantee-icon">🛡️</div>
+    <div>
+      <div class="guarantee-title">Garantía total de 30 días</div>
+      <p class="guarantee-text">Si en 30 días no notás ningún resultado, te devolvemos el 100% de tu dinero. <strong>Sin preguntas. Sin burocracia.</strong> Confiamos tanto en este método que asumimos todo el riesgo nosotros. Vos no arriesgás absolutamente nada.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section fade-up">
+  <div class="s-eye">Preguntas frecuentes</div>
+  <h2 class="s-h">Todo lo que querés saber<br><em>antes de decidir</em></h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">¿Cuándo recibo el E-Book después de pagar? <span class="faq-icon">+</span></div><div class="faq-a">Inmediatamente. Apenas confirmado el pago te redirigimos automáticamente a la página de descarga. No tenés que esperar nada ni contactar a nadie.</div></div>
+    <div class="faq-item"><div class="faq-q">¿Necesito saber de nutrición para aplicarlo? <span class="faq-icon">+</span></div><div class="faq-a">Para nada. Está escrito de forma simple y directa, sin tecnicismos. Si podés leer esto, podés aplicar el método desde mañana.</div></div>
+    <div class="faq-item"><div class="faq-q">¿En cuánto tiempo veo resultados? <span class="faq-icon">+</span></div><div class="faq-a">La mayoría nota una diferencia en los primeros 7 días — menos hinchazón, menos gases. El plan de 21 días es para resultados duraderos y profundos.</div></div>
+    <div class="faq-item"><div class="faq-q">¿Puedo pagarlo en cuotas? <span class="faq-icon">+</span></div><div class="faq-a">Sí. Con Mercado Pago podés pagar en hasta 6 cuotas con tarjeta. También aceptamos débito y transferencia bancaria.</div></div>
+    <div class="faq-item"><div class="faq-q">¿El E-Book funciona en celular? <span class="faq-icon">+</span></div><div class="faq-a">Sí, es un PDF que podés leer en cualquier dispositivo — celular, tablet o computadora. También podés imprimirlo.</div></div>
+  </div>
+</div>
+
+<div class="final-section fade-up">
+  <h2 class="final-h">¿Cuánto más vas a esperar<br>para sentirte <em>bien de verdad?</em></h2>
+  <p class="final-sub">Cada día que pasa es otro día con inflamación y malestar que podrían estar terminando. Por menos de lo que cuesta un almuerzo.</p>
+  <div class="final-box">
+    <div class="cta-box">
+      <div class="price-row">
+        <span class="price-old">$30.000</span>
+        <span class="price-new">$14.900</span>
+        <span class="price-off">-50% OFF</span>
+      </div>
+      <p class="price-sub">Pago único · <span>6 cuotas de $2.483</span></p>
+      <a href="https://mpago.la/2Qhivw2" class="btn-main">✅ Quiero empezar hoy</a>
+      <p class="btn-micro"><span class="mi-1">🔒 Pago seguro</span> <span class="mi-2">🛡️ Garantía 30 días</span> <span class="mi-3">⚡ Inmediato</span></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Bienestar Interior &nbsp;·&nbsp; <a href="https://gastongarcia1295.github.io/Intestino-Descarga/">Política de devolución</a> &nbsp;·&nbsp; Todos los derechos reservados</p>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://mpago.la/2Qhivw2" class="btn-main">✅ Quiero el E-Book — $14.900</a>
+</div>
+
+<script>
+(function(){
+  let dl=localStorage.getItem('bi_dl');
+  if(!dl){dl=Date.now()+(23*3600+47*60+12)*1000;localStorage.setItem('bi_dl',dl);}
+  dl=parseInt(dl);
+  function tick(){
+    const d=Math.max(0,dl-Date.now());
+    const h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+    const el=document.getElementById('timer');
+    if(el)el.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    if(d>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+
+(function(){
+  let spots=parseInt(localStorage.getItem('bi_spots')||'19');
+  const el=document.getElementById('spots');
+  if(el)el.textContent=spots;
+  setInterval(()=>{
+    if(spots>7&&Math.random()<0.12){spots--;localStorage.setItem('bi_spots',spots);if(el)el.textContent=spots;}
+  },9000);
+})();
+
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
